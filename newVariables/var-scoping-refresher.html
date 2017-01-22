@@ -1,0 +1,30 @@
+<html>
+	<head></head>
+	<body>
+		<script>
+			function setWitdh() {
+				var width = 100; // las variables definidas con var solo tiene alcance de funcion.
+				console.log(width);
+			}
+			setWitdh();
+
+			var age = 100;
+			if(age > 12) {
+				// esta variable puede ser accedida desde afuera, ya que no fue creada dentro de un scope de funcion.
+				var dogYears = age * 7;
+				console.log(`You are ${dogYears} dog years old!`);
+			}
+			console.log(dogYears);
+
+			if(age > 12){
+				let doggy = age * 7;
+				const doggies = age * 7;
+				console.log(`You are ${doggy} doggy years old!`);
+				console.log(`You are ${doggies} doggy years old!`);
+			}
+			// las variables doggy y doggies tienen scope de bloque, por lo que no puede ser accedida fuera del bloque declarado.
+			console.log(doggy);
+			console.log(doggies);
+		</script>
+	</body>
+</html>
