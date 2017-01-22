@@ -1,0 +1,39 @@
+<html>
+	<head></head>
+	<body>
+		<script>
+			const key = 'abc123';
+			let points = 50;
+			let winner = false;
+			var winner2 = false;
+
+			// Identifier 'points' has already been declared
+			// Las variables let no pueden volver a declararse como las var.
+			// let points = 60;
+
+			if(points > 40) {
+				console.log("it ran1");
+				let winner = true;
+				var winner2 = true;
+			}
+
+			console.log(winner); // imprime false, ya que toma la variable definida en el scope window
+			console.log(winner2); // imprime true, ya que se encuentra definida como global y dentro del bloque se modifica.
+
+			const person = {
+				name: 'lorgio',
+				age: 32
+			}
+			person.age = 33;
+			console.log(person.age); // imprime 33 ya que no estamos reasignando la variable person.
+
+			// Esta asignacion no puede realizarse ya que la variable fue declarada como constante.
+			// person = { name: 'wesly'}; // let-vs-const.html:29 Uncaught TypeError: Assignment to constant variable.
+
+			// Si se requiere frezear todo el objeto.
+			const wes = Object.freeze(person);
+			wes.age = 27;
+			console.log(wes.age); // imprime 33 ya que no se puede modificar el atributo de wes.
+		</script>
+	</body>
+</html>
